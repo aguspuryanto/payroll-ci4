@@ -1,0 +1,51 @@
+/*page[size="A4-landscape"] {
+  width: 28cm;
+  min-width: 28cm;
+  min-height: 21cm;
+}
+
+page[size="A4"] {
+  width: 21cm;
+  min-height: 28cm;  
+}
+
+page[size="A4-landscape"], page[size="A4"] {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}*/
+
+body { margin: 10px 50px; }
+
+@media screen {
+  page[size="A4-landscape"], page[size="A4-landscape"] {
+    /*width: 28cm;*/
+    min-width: 28cm;
+    min-height: 21cm;
+  }
+  page[size="A4"] {
+    width: 21cm;
+    min-height: 28cm;
+  }
+
+  page[size="A4-landscape"], page[size="A4"] {
+    background: white;
+    display: inline-block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);   
+  }
+}
+
+@media print {
+  page[size="cetak-A4"], page[size="A4-landscape"] {
+    page-break-after: always;    
+  }
+  body, page[size="A4"], page[size="A4-landscape"] {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+}

@@ -141,11 +141,13 @@
                         echo "<a href='".base_url('payroll/lihat/?kode='.$payroll->kode_payroll)."' title='Lihat' class='lihat' kode='".$payroll->kode_payroll."' ><i class='fa fa-search'></i></a>";
                         if($payroll->status == "Tagihan" && in_array("AAJUBON", $session->get('menu_citra'))) {
                           echo " &nbsp; <a href='".base_url('payroll/ubah?kode='.$payroll->kode_payroll)."' title='Ubah'><i class='fa fa-edit'></i></a>";
-                          echo " &nbsp; <a href='#' title='Hapus' class='hapus' kode='".$payroll->kode_payroll."'  data-bs-toggle='modal' data-bs-target='#hapusModal'><i class='fa fa-trash text-danger'></i></a>";
+                          // echo " &nbsp; <a href='#' title='Hapus' class='hapus' kode='".$payroll->kode_payroll."'  data-bs-toggle='modal' data-bs-target='#hapusModal'><i class='fa fa-trash text-danger'></i></a>";
                         // } else if($payroll->status == "Lunas") {
-                        } else {
-                          echo " &nbsp; <a href='".base_url('payroll/download?kode='.$payroll->kode_payroll)."' title='Download Excel' class='btn btn-sm btn-success'><i class='far fa-file-excel'></i> Download</a>";
+                        // } else {
+                          // echo " &nbsp; <a href='".base_url('payroll/download?kode='.$payroll->kode_payroll)."' title='Download Excel' class='btn btn-sm btn-success'><i class='far fa-file-excel'></i> Download</a>";
                         }
+                        echo " &nbsp; <a href='".base_url('payroll/download?kode='.$payroll->kode_payroll)."' title='Download Excel' class='btn btn-sm btn-success'><i class='far fa-file-excel'></i> Download</a>";
+                        echo " &nbsp; <a href='#' title='Hapus' class='hapus' kode='".$payroll->kode_payroll."'  data-bs-toggle='modal' data-bs-target='#hapusModal'><i class='fa fa-trash text-danger'></i></a>";
                       echo "</td>";
                     echo "</tr>";
                   }

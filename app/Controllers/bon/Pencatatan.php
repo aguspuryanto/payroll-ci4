@@ -93,7 +93,8 @@ class Pencatatan extends BaseController {
       return redirect()->to(site_url('bon/daftar'));
     }
     // $where = array('bon.kode_bon'=>$kode, 'bon.kode_bon_status'=>BON_PENGAJUAN);
-    $where = array('bon.kode_bon'=>$kode, 'bon.kode_bon_status'=>BON_PERSETUJUAN_DIREKSI);
+    // $where = array('bon.kode_bon'=>$kode, 'bon.kode_bon_status'=>BON_PERSETUJUAN_DIREKSI);
+    $where = 'bon.kode_bon='.$kode.' AND bon.kode_bon_status='.BON_PENGAJUAN.' OR bon.kode_bon_status='.BON_PERSETUJUAN_DIREKSI;
     $this->data['bon'] = $this->bonModel->getBon($where)->first();
     // echo $this->bonModel->getLastQuery()->getQuery(); die();// Menampilkan query terakhir
 

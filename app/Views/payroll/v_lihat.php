@@ -93,7 +93,10 @@
                     <th style="min-width: 100px;">Pinjaman Pegawai</th>
                     <th style="min-width: 100px;">Gaji Nett</th>
                     <th style="min-width: 100px;">BPJS Kes PT</th>
-                    <th style="min-width: 100px;">BPJS TK PT</th>
+                    <th style="min-width: 100px;">BPJS TK JKM PT</th>
+                    <th style="min-width: 100px;">BPJS TK JKK PT</th>
+                    <th style="min-width: 100px;">BPJS TK JP PT</th>
+                    <th style="min-width: 100px;">BPJS TK JHT PT</th>
                     <th style="min-width: 100px;">PPH21</th>
                   </tr>
                 </thead>
@@ -126,7 +129,10 @@
                         echo "<td class='text-end'>".number_format($detil->pinjaman,0,".",",")."</td>";
                         echo "<td class='text-end'>".number_format($detil->gaji_nett,0,".",",")."</td>";
                         echo "<td class='text-end'>".number_format($detil->bpjs_kes_pt,0,".",",")."</td>";
-                        echo "<td class='text-end'>".number_format($detil->bpjs_tk_pt,0,".",",")."</td>";
+                        echo "<td class='text-end'>".number_format($detil->bpjs_tk_jkm_pt,0,".",",")."</td>";
+                        echo "<td class='text-end'>".number_format($detil->bpjs_tk_jkk_pt,0,".",",")."</td>";
+                        echo "<td class='text-end'>".number_format($detil->bpjs_tk_jp_pt,0,".",",")."</td>";
+                        echo "<td class='text-end'>".number_format($detil->bpjs_tk_jht_pt,0,".",",")."</td>";
                         echo "<td class='text-end'>".number_format($detil->pph21,0,".",",")."</td>";
                         echo "</tr>";
                       }
@@ -151,7 +157,10 @@
                     <td class="text-end footer-total" tag="pinjaman"><?= number_format($payroll->total_pinjaman,0,".",",") ?></td>
                     <td class="text-end footer-total" tag="nett"><?= number_format($payroll->total_gaji_net,0,".",",") ?></td>
                     <td class="text-end footer-total" tag="bpjs_kes_pt"><?= number_format($payroll->total_bpjs_kes_pt,0,".",",") ?></td>
-                    <td class="text-end footer-total" tag="bpjs_tk_pt"><?= number_format($payroll->total_bpjs_tk_pt,0,".",",") ?></td>
+                    <td class="text-end footer-total" tag="bpjs_tk_pt"><?= number_format($payroll->total_bpjs_tk_jkm_pt,0,".",",") ?></td>
+                    <td class="text-end footer-total" tag="bpjs_tk_pt"><?= number_format($payroll->total_bpjs_tk_jkk_pt,0,".",",") ?></td>
+                    <td class="text-end footer-total" tag="bpjs_tk_pt"><?= number_format($payroll->total_bpjs_tk_jp_pt,0,".",",") ?></td>
+                    <td class="text-end footer-total" tag="bpjs_tk_pt"><?= number_format($payroll->total_bpjs_tk_jht_pt,0,".",",") ?></td>
                     <td class="text-end footer-total" tag="pph21"><?= number_format($payroll->total_pph21,0,".",",") ?></td>
                   </tr>
                 </tfoot>

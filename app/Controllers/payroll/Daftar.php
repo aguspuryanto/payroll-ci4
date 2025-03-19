@@ -662,7 +662,8 @@ class Daftar extends BaseController {
     $kode = $this->request->getGet('kode');
     if(!$kode) return redirect()->to(base_url('payroll/daftar'));
 
-    $where = array('payroll.kode_payroll'=>$kode, 'payroll.status'=>'Lunas');
+    // $where = array('payroll.kode_payroll'=>$kode, 'payroll.status'=>'Lunas');
+    $where = array('payroll.kode_payroll'=>$kode);
     if(!$this->data['session']->get('isadmin_citra') && $this->data['session']->get('kode_pt')) {
       $where['payroll.kode_pt'] = $this->data['session']->get('kode_pt');
     }
@@ -674,6 +675,7 @@ class Daftar extends BaseController {
     }
 
     $detils = $this->payrollDetilModel->getPayrollDetil(array('payroll_detil.kode_payroll'=>$kode))->find();
+    // echo $this->payrollDetilModel->getLastQuery()->getQuery(); // Menampilkan query terakhir
 
     $this->generateExcel($payroll, $detils);
   }
@@ -751,7 +753,7 @@ class Daftar extends BaseController {
                 \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING2
             );
         $sheet->setCellValue('D'.$row, $detil->nama_lengkap_pt_karyawan);
-        $sheet->setCellValue('D'.$row, $detil->jabatan_pt_karyawan);
+        $sheet->setCellValue('E'.$row, $detil->jabatan_pt_karyawan);
 
         $sheet->setCellValue('F'.$row, $detil->gaji_pokok);
         $sheet->setCellValue('G'.$row, $detil->gaji_jabatan_tetap);
